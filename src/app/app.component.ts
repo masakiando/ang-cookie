@@ -13,12 +13,15 @@ export class AppComponent {
   title = 'angular2-cookie';
 
   setCookies() {
-    // this._cookieService.put('test', 'testing cookie');
     this._cookieService.set('test', 'testing cookie', 12);
   }
 
   getCookies() {
-    alert(this._cookieService.get('test'));
+    if (this._cookieService.check('test')) {
+      alert(this._cookieService.get('test'));
+    } else {
+      alert('no cookie');
+    }
   }
 
   delCookies() {
