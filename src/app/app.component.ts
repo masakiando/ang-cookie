@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CookieService } from 'angular2-cookie/core';
+// import { CookieService } from 'angular2-cookie/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent {
   title = 'angular2-cookie';
 
   setCookies() {
-    this._cookieService.put('test', 'testing cookie');
+    // this._cookieService.put('test', 'testing cookie');
+    this._cookieService.set('test', 'testing cookie', 12);
   }
 
   getCookies() {
@@ -20,6 +22,6 @@ export class AppComponent {
   }
 
   delCookies() {
-    this._cookieService.remove('test');
+    this._cookieService.delete('test');
   }
 }
